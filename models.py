@@ -35,7 +35,7 @@ class Order(SQLModel, table=True):
     Sr_no: Optional[int] = Field(default=None, primary_key=True)
     estimate_cost: int
     last_quantity_purchased: int
-    date_of_last_purchased: datetime = Field(default_factory=datetime.utcnow, nullable=False)
+    date_of_last_purchased: Optional[str]
     stock_in_balance: int
     further_forecasted_requirement: int
     approved_rate: int
