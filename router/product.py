@@ -13,9 +13,10 @@ router = APIRouter(
 )
 
 
-@router.get("/")
+@router.get("/get", response_model=List[Product], status_code=status.HTTP_200_OK)
 def get():
-    return {"sjdkja"}
+    query = session.exec(select(Product)).all()
+    return query
 
 
 @router.post("/post", response_model=Product, status_code=status.HTTP_201_CREATED)
@@ -25,3 +26,5 @@ def product_post(data: Product):
     session.commit()
     session.refresh(product)
     return product
+
+
