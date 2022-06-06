@@ -21,7 +21,7 @@ class Company(SQLModel, table=True):
 class Product(SQLModel, table=True):
     __tablename__ = "products"
     id: Optional[int] = Field(default=None, primary_key=True)
-    barcode: int
+    barcode: str
     product_name: str
     product_description: str
     total_stock: int
