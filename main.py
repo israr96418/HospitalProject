@@ -1,5 +1,5 @@
 from fastapi import FastAPI
-from router import demand, order, product, stock_in, stock_out,firm
+from router import demand, order, product, stock_in, stock_out, firm
 from fastapi.middleware.cors import CORSMiddleware
 
 app = FastAPI()
